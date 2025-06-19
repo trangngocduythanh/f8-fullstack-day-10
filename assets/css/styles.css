@@ -25,6 +25,7 @@ select {
 a {
     text-decoration: none;
 }
+
 .container {
     width: 1070px;
     margin: 0 auto;
@@ -63,6 +64,7 @@ a {
     text-align: center;
     box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 0.2);
     border-radius: 8px;
+    background: #fff;
 }
 
 .member-item .thumb {
@@ -128,4 +130,58 @@ a {
     color: #fff;
     background: #1cb5e0;
     border: transparent;
+}
+
+/* CHANGECOLORPRODUCT.HTML */
+.content {
+    padding: 50px 0;
+    width: 1070px;
+    margin: 0 auto;
+}
+
+.content .title {
+    font-size: 50px;
+}
+
+.list-shoes {
+    display: flex;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.shoe-item {
+    flex-grow: 1;
+    background: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.shoe-item img {
+    border-radius: 6px;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    filter: hue-rotate(54deg) saturate(110%) contrast(110%);
+}
+
+.shoe-item:nth-child(2) img {
+    filter: hue-rotate(265deg) saturate(110%) contrast(110%);
+}
+
+.shoe-item:nth-child(3) img {
+    filter: hue-rotate(158deg) saturate(110%) contrast(110%);
+}
+
+.shoe-item .body {
+    padding: 14px;
+    text-align: center;
+}
+
+.shoe-item .body .title {
+    font-size: 16px;
+}
+
+.shoe-item .body .price {
+    display: inline-block;
+    margin: 10px 0;
+    font-weight: 400;
 }
