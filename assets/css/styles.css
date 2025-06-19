@@ -168,7 +168,7 @@ a {
 }
 
 .shoe-item:nth-child(3) img {
-    filter: hue-rotate(158deg) saturate(110%) contrast(110%);
+    filter: hue-rotate(133deg) saturate(110%) contrast(110%);
 }
 
 .shoe-item .body {
