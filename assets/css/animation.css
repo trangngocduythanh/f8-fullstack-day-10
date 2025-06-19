@@ -1,3 +1,106 @@
 * {
     box-sizing: border-box;
 }
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-dots {
+    display: flex;
+    gap: 14px;
+}
+
+.list-dots .dot::before {
+    display: block;
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #000;
+    animation: jump linear 4s infinite;
+    animation-fill-mode: both;
+}
+
+.list-dots .dot::after {
+    display: block;
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #000;
+    animation: jump linear 4s infinite 1.5s;
+    animation-fill-mode: both;
+}
+
+.list-dots .dot:nth-child(2)::before {
+    animation-delay: 0.3s;
+}
+
+.list-dots .dot:nth-child(2)::after {
+    animation-delay: 1.8s;
+}
+
+.list-dots .dot:nth-child(3)::before {
+    animation-delay: 0.6s;
+}
+
+.list-dots .dot:nth-child(3)::after {
+    animation-delay: 2.1s;
+}
+
+.list-dots .dot:nth-child(4)::before {
+    animation-delay: 0.9s;
+}
+
+.list-dots .dot:nth-child(4)::after {
+    animation-delay: 2.4s;
+}
+
+.list-dots .dot:nth-child(5)::before {
+    animation-delay: 1.2s;
+}
+
+.list-dots .dot:nth-child(5)::after {
+    animation-delay: 2.7s;
+}
+
+.list-dots .dot:nth-child(6)::before {
+    animation-delay: 1.5s;
+}
+
+.list-dots .dot:nth-child(6)::after {
+    animation-delay: 3s;
+}
+
+.list-dots .dot:nth-child(7)::before {
+    animation-delay: 1.8s;
+}
+
+.list-dots .dot:nth-child(7)::after {
+    animation-delay: 3.3s;
+}
+
+@keyframes jump {
+    0%,
+    100% {
+        opacity: 0;
+        scale: 0;
+        translate: 0;
+    }
+
+    33% {
+        opacity: 1;
+        scale: 0.6;
+        translate: 0 -60px;
+    }
+
+    66% {
+        opacity: 1;
+        scale: 1;
+        translate: 0 60px;
+    }
+}
