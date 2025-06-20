@@ -3,10 +3,10 @@
 }
 
 body {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .list-dots {
@@ -19,26 +19,29 @@ body {
     background: rgb(233, 232, 232);
 }
 
-.list-dots .dot::before {
-    display: block;
-    content: "";
+.list-dots .dot {
+    position: relative;
     width: 30px;
     height: 30px;
+}
+
+.list-dots .dot::before,
+.list-dots .dot::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    content: "";
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background: #000;
-    animation: jump linear 4s infinite;
+    animation: jump ease-in-out 4s infinite;
     animation-fill-mode: both;
 }
 
 .list-dots .dot::after {
-    display: block;
-    content: "";
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #000;
-    animation: jump linear 4s infinite 1.5s;
-    animation-fill-mode: both;
+    animation-delay: -2s;
 }
 
 .list-dots .dot:nth-child(2)::before {
@@ -46,7 +49,7 @@ body {
 }
 
 .list-dots .dot:nth-child(2)::after {
-    animation-delay: 1.8s;
+    animation-delay: -1.7s;
 }
 
 .list-dots .dot:nth-child(3)::before {
@@ -54,7 +57,7 @@ body {
 }
 
 .list-dots .dot:nth-child(3)::after {
-    animation-delay: 2.1s;
+    animation-delay: -1.4s;
 }
 
 .list-dots .dot:nth-child(4)::before {
@@ -62,7 +65,7 @@ body {
 }
 
 .list-dots .dot:nth-child(4)::after {
-    animation-delay: 2.4s;
+    animation-delay: -1.1s;
 }
 
 .list-dots .dot:nth-child(5)::before {
@@ -70,7 +73,7 @@ body {
 }
 
 .list-dots .dot:nth-child(5)::after {
-    animation-delay: 2.7s;
+    animation-delay: -0.8s;
 }
 
 .list-dots .dot:nth-child(6)::before {
@@ -78,7 +81,7 @@ body {
 }
 
 .list-dots .dot:nth-child(6)::after {
-    animation-delay: 3s;
+    animation-delay: -0.5s;
 }
 
 .list-dots .dot:nth-child(7)::before {
@@ -86,7 +89,7 @@ body {
 }
 
 .list-dots .dot:nth-child(7)::after {
-    animation-delay: 3.3s;
+    animation-delay: -0.2s;
 }
 
 @keyframes jump {
@@ -97,15 +100,18 @@ body {
         translate: 0;
     }
 
-    33% {
-        opacity: 1;
+    25% {
         scale: 0.6;
         translate: 0 -60px;
     }
 
-    66% {
+    50% {
         opacity: 1;
-        scale: 1;
+    }
+
+    75% {
+        opacity: 1;
+        scale: 1.1;
         translate: 0 60px;
     }
 }
